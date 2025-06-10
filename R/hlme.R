@@ -677,8 +677,8 @@ hlme <-
 ####
 #### INCLUSION WEIGHT 
         #if(missing(prior)){ PRIOR <- seq(0,length=length(IDnum))} 
-        if(missing(weight)){ WEIGHT <- seq(1,length=length(IND))} 
-        if(!missing(weight)){ 
+        if(is.null(weight)){ WEIGHT <- seq(1,length=length(IND))} 
+        if(!is.null(weight)){ 
           WEIGHT <- newdata[,nom.weight]
           WEIGHT[(is.na(WEIGHT))] <- 0
         }
